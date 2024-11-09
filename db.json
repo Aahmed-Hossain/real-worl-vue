@@ -1,0 +1,52 @@
+{
+  "events": [
+    {
+      "id": 1,
+      "title": "Beach Cleanup",
+      "date": "Sat Nov 09 2024",
+      "time": "06:00",
+      "location": "Daytona Beach",
+      "description": "Let's Cleanup the Beach",
+      "onganiser": "John Doe",
+      "category": "Sustainability",
+      "attendees": [
+        { "id": "abcd1", "name": "John Doe" },
+        { "id": "efg2", "name": "Adam Smith" },
+        { "id": "hij3fgg", "name": "Jason Roy" },
+        { "id": "hij3jd", "name": "Amajon Roy" }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Charity Run",
+      "date": "Sun Nov 10 2024",
+      "time": "08:30",
+      "location": "Hall Town Road",
+      "description": "Collect Fund from straingers",
+      "onganiser": "Evelyn Ross",
+      "category": "Charity",
+      "attendees": [
+        { "id": "klm4", "name": "Evelyn Ross" },
+        { "id": "nop5", "name": "Michael Johnson" },
+        { "id": "qrs6", "name": "Nina Patel" },
+        { "id": "hij3s", "name": "Adam Smith" },
+        { "id": "hij3g", "name": "Amajon Roy" }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Tree Planting",
+      "date": "Mon Nov 11 2024",
+      "time": "09:00",
+      "location": "Villege Roadside Area",
+      "description": "Let's Planting tree",
+      "onganiser": "Sophia Lin",
+      "category": "Plantation",
+      "attendees": [
+        { "id": "tuv7", "name": "Lucas Gray" },
+        { "id": "wxy8", "name": "Sophia Lin" },
+        { "id": "zab9", "name": "Oscar Brown" }
+      ]
+    }
+  ]
+}
