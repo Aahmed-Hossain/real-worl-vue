@@ -1,19 +1,26 @@
 <template>
   <div>
     <h2>Create Event</h2>
-    <form>
+    <form @submit.prevent="createEvent">
       <label for="category">Select a category</label>
-      <select id="category" name="category">
+      <select v-model="event.category" id="category" name="category">
         <option v-for="cat in categories" :value="cat" :key="cat">
           {{ cat }}
         </option>
       </select>
 
       <label for="title">Title</label>
-      <input type="text" id="title" name="title" placeholder="Title" />
+      <input
+        v-model="event.title"
+        type="text"
+        id="title"
+        name="title"
+        placeholder="Title"
+      />
 
       <label for="description">Description</label>
       <input
+        v-model="event.description"
         type="text"
         id="description"
         name="description"
@@ -23,10 +30,13 @@
       <input type="text" id="location" name="location" placeholder="Location" />
 
       <label for="time">Select date</label>
-      <datepicker class="input" placeholder="Select a date" />
-
+      <datepicker
+        v-model="event.date"
+        class="input"
+        placeholder="Select a date"
+      />
       <label for="time">Select time</label>
-      <select id="time" name="time">
+      <select v-model="event.time" id="time" name="time">
         <option v-for="time in times" :value="time" :key="time">
           {{ time }}
         </option>
@@ -52,7 +62,7 @@ export default {
       times.push(i + ":00");
     }
 
-    return { times };
+    return { times, event: this.createNewEvent() };
   },
 
   computed: {
@@ -60,6 +70,30 @@ export default {
 
     catLength() {
       return this.$store.getters.catLength;
+    },
+  },
+
+  methods: {
+    createEvent() {
+      this.$store.dispatch("createEvent", this.event);
+      this.event = this.createNewEvent();
+    },
+    createNewEvent() {
+      const user = this.user;
+      const id = Math.floor(Math.random() * 10000000000);
+
+      return {
+        user: user,
+        id: id,
+        category: "",
+        organiser: user,
+        title: "",
+        description: "",
+        location: "",
+        date: "",
+        time: "",
+        attendees: [],
+      };
     },
   },
 };
